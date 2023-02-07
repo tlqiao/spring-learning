@@ -39,7 +39,6 @@ public class FooDao {
         //Query list, and list only include one field
         List<String> list = jdbcTemplate.queryForList("SELECT BAR FROM FOO", String.class);
         list.forEach(s -> log.info("Bar: {}", s));
-
         //Query List, and list include multiple field,should use row mapper
         List<Foo> fooList = jdbcTemplate.query("SELECT * FROM FOO", new RowMapper<Foo>() {
             @Override
@@ -47,8 +46,7 @@ public class FooDao {
                 return Foo.builder()
                         .id(rs.getLong(1))
                         .bar(rs.getString(2))
-                        .build();
-            }
+                        .build();}
         });
         fooList.forEach(f -> log.info("Foo: {}", f));
     }
