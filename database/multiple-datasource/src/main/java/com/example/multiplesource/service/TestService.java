@@ -20,7 +20,6 @@ public class TestService {
     public List<College> getAllColleges(){
         return collegeRepository.findAll();
     }
-
     @SwitchDataSource(value = "student")
     //使用定义的注解
     public List<Student> getAllStudents(){

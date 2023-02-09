@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
 public class DataSourceAspect {
     //通过切面编程实现不同数据库的切换
     private final Logger logger = LoggerFactory.getLogger(getClass());
-
     //defining where the jointpoint need to be applied
     @Pointcut("@annotation(com.example.multiplesource.config.SwitchDataSource)")
     public void annotationPointCut() {
