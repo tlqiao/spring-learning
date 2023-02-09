@@ -11,16 +11,10 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @GetMapping(value = "/getColleges")
+    @GetMapping(value = "/getAll")
     public Response getCollegesResponse(){
         Response response = new Response();
         response.setColleges(testService.getAllColleges());
-        return response;
-    }
-
-    @GetMapping(value = "/getStudents")
-    public Response getStudentResponse(){
-        Response response = new Response();
         response.setStudents(testService.getAllStudents());
         return response;
     }
